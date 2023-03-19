@@ -1,8 +1,8 @@
 ## v++
 
-### automated process for create assembleRelease for React native
+### automated process form versioning create assembleRelease for React native
 
-#### first this will increase versionCode and versionName by one like
+#### first this will increase versionCode and versionName by 1
 
 ##### before run this
 ```

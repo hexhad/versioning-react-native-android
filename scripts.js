@@ -18,26 +18,32 @@ fs.readFile(filePath, "utf8", async (err, doc) => {
 
   let splitVersionName = versionName[0].split(".");
 
-  var res = await doc
-    .replace(versionCodeRegX, currentCode + 1)
-    .replace(
-      versionNameRegX,
-      `${splitVersionName[0]}.${Number.parseInt(splitVersionName[1]) + 1}`
-    );
+  let newVersionCode = currentCode + 1;
+  let newVersionName = `${splitVersionName[0]}.${
+    Number.parseInt(splitVersionName[1]) + 1
+  }`;
 
-  await updateDoc(res);
+  var res = await doc
+    .replace(versionCodeRegX, newVersionCode)
+    .replace(versionNameRegX, newVersionName);
+
+  await updateDoc(res, newVersionCode, newVersionName);
 });
 
-async function updateDoc(content) {
+async function updateDoc(content, newVersionCode, newVersionName) {
   await fs.writeFile("build.gradle", content, "utf8", (err) => {
     if (err) {
       console.log(err);
       return;
     }
+    console.log("versionCode ",newVersionCode);
+    console.log("versionName ",newVersionName);
     console.log("Updated !!");
 
     // run your command to create assemble build
     // shell.exec("cd android && ./gradlew clean assembleRelease");
-    shell.exec("echo hello");
+
+    //better to run with bash or one support mv
+    shell.exec(`mv release v-${newVersionName}`);
   });
 }
