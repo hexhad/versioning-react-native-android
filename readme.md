@@ -50,6 +50,9 @@ googleapis <-- google API
 ### Final
 ![](/imgs/1.JPG)
 
+### helpful links
+
+https://developers.google.com/oauthplayground/
 
 
 
