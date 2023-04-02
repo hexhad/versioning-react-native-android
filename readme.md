@@ -5,10 +5,10 @@
 ### ROOT 🤔 : in my workplace i had to create a android build and upload it to google drive END OF THE DAY felt like doing same thing again and again so i got this idea and created this automated process from increase versionCode and versionName by one to uploading apk to google drive
 
 ### TODO
- * 1. to create new version of the applicaiton ✔️
- * 2. upload apk to google drive ✔️
- * 3. upload apk to firestore ❌
- * 4. pulish to store ❌
+ * to create new version of the applicaiton ✔️
+ * upload apk to google drive ✔️
+ * upload apk to firestore ❌
+ * publish to store ❌
 
 #### first this will increase versionCode and versionName by 1
 
